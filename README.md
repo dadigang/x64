@@ -1,273 +1,336 @@
-<img alt="micro logo" src="./assets/micro-logo-drop.svg" width="500px"/>
+<p align="center">
+  <img width="536" src="https://user-images.githubusercontent.com/8456633/174470852-339b5011-5800-4bb9-a628-ff230aa8cd4e.png">
+</p>
 
-[![Build Status](https://travis-ci.org/zyedidia/micro.svg?branch=master)](https://travis-ci.org/zyedidia/micro)
-[![Go Report Card](https://goreportcard.com/badge/github.com/zyedidia/micro)](https://goreportcard.com/report/github.com/zyedidia/micro)
-[![Release](https://img.shields.io/github/release/zyedidia/micro.svg?label=Release)](https://github.com/zyedidia/micro/releases)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/zyedidia/micro/blob/master/LICENSE)
-[![Join the chat at https://gitter.im/zyedidia/micro](https://badges.gitter.im/zyedidia/micro.svg)](https://gitter.im/zyedidia/micro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Snap Status](https://snapcraft.io/micro/badge.svg)](https://snapcraft.io/micro)
 
-**micro** is a terminal-based text editor that aims to be easy to use and intuitive, while also taking advantage of the capabilities
-of modern terminals. It comes as a single, batteries-included, static binary with no dependencies; you can download and use it right now!
+![CI](https://github.com/jesseduffield/lazygit/workflows/Continuous%20Integration/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jesseduffield/lazygit)](https://goreportcard.com/report/github.com/jesseduffield/lazygit)
+[![GolangCI](https://golangci.com/badges/github.com/jesseduffield/lazygit.svg)](https://golangci.com)
+[![GoDoc](https://godoc.org/github.com/jesseduffield/lazygit?status.svg)](http://godoc.org/github.com/jesseduffield/lazygit)
+[![GitHub Releases](https://img.shields.io/github/downloads/jesseduffield/lazygit/total)](https://github.com/jesseduffield/lazygit/releases)
+[![GitHub tag](https://img.shields.io/github/tag/jesseduffield/lazygit.svg)](https://github.com/jesseduffield/lazygit/releases/latest)
+[![homebrew](https://img.shields.io/homebrew/v/lazygit)](https://github.com/Homebrew/homebrew-core/blob/master/Formula/lazygit.rb)
 
-As its name indicates, micro aims to be somewhat of a successor to the nano editor by being easy to install and use.
-It strives to be enjoyable as a full-time editor for people who prefer to work in a terminal, or those who regularly edit files over SSH.
+A simple terminal UI for git commands, written in Go with the [gocui](https://github.com/jroimartin/gocui "gocui") library.
 
-Here is a picture of micro editing its source code.
+![Gif](../assets/staging.gif)
 
-![Screenshot](./assets/micro-solarized.png)
+## Sponsors
 
-To see more screenshots of micro, showcasing some of the default color schemes, see [here](https://micro-editor.github.io).
- 
-You can also check out the website for Micro at https://micro-editor.github.io.
+<p align="center">
+ Maintenance of this project is made possible by all the <a href="https://github.com/jesseduffield/lazygit/graphs/contributors">contributors</a> and <a href="https://github.com/sponsors/jesseduffield">sponsors</a>. If you'd like to sponsor this project and have your avatar or company logo appear below <a href="https://github.com/sponsors/jesseduffield">click here</a>. 💙
+</p>
 
-## Table of Contents
+<p align="center">
+<!-- sponsors --><a href="https://github.com/atecce"><img src="https://github.com/atecce.png" width="60px" alt="" /></a><a href="https://github.com/intabulas"><img src="https://github.com/intabulas.png" width="60px" alt="" /></a><a href="https://github.com/peppy"><img src="https://github.com/peppy.png" width="60px" alt="" /></a><a href="https://github.com/piot"><img src="https://github.com/piot.png" width="60px" alt="" /></a><a href="https://github.com/blacky14"><img src="https://github.com/blacky14.png" width="60px" alt="" /></a><a href="https://github.com/rgwood"><img src="https://github.com/rgwood.png" width="60px" alt="" /></a><a href="https://github.com/oliverguenther"><img src="https://github.com/oliverguenther.png" width="60px" alt="" /></a><a href="https://github.com/pawanjay176"><img src="https://github.com/pawanjay176.png" width="60px" alt="" /></a><a href="https://github.com/bdach"><img src="https://github.com/bdach.png" width="60px" alt="" /></a><a href="https://github.com/naoey"><img src="https://github.com/naoey.png" width="60px" alt="" /></a><a href="https://github.com/jryom"><img src="https://github.com/jryom.png" width="60px" alt="" /></a><a href="https://github.com/carstengehling"><img src="https://github.com/carstengehling.png" width="60px" alt="" /></a><a href="https://github.com/ceuk"><img src="https://github.com/ceuk.png" width="60px" alt="" /></a><a href="https://github.com/akospwc"><img src="https://github.com/akospwc.png" width="60px" alt="" /></a><a href="https://github.com/peterdieleman"><img src="https://github.com/peterdieleman.png" width="60px" alt="" /></a><a href="https://github.com/Xetera"><img src="https://github.com/Xetera.png" width="60px" alt="" /></a><a href="https://github.com/HoldenLucas"><img src="https://github.com/HoldenLucas.png" width="60px" alt="" /></a><a href="https://github.com/barbados-clemens"><img src="https://github.com/barbados-clemens.png" width="60px" alt="" /></a><a href="https://github.com/nartc"><img src="https://github.com/nartc.png" width="60px" alt="" /></a><a href="https://github.com/"><img src="https://github.com/.png" width="60px" alt="" /></a><a href="https://github.com/matejcik"><img src="https://github.com/matejcik.png" width="60px" alt="" /></a><a href="https://github.com/lucatume"><img src="https://github.com/lucatume.png" width="60px" alt="" /></a><a href="https://github.com/dbabiak"><img src="https://github.com/dbabiak.png" width="60px" alt="" /></a><a href="https://github.com/davidlattimore"><img src="https://github.com/davidlattimore.png" width="60px" alt="" /></a><a href="https://github.com/zach-fuller"><img src="https://github.com/zach-fuller.png" width="60px" alt="" /></a><a href="https://github.com/escrafford"><img src="https://github.com/escrafford.png" width="60px" alt="" /></a><a href="https://github.com/davdroman"><img src="https://github.com/davdroman.png" width="60px" alt="" /></a><a href="https://github.com/KowalskiPiotr98"><img src="https://github.com/KowalskiPiotr98.png" width="60px" alt="" /></a><a href="https://github.com/IvanZuy"><img src="https://github.com/IvanZuy.png" width="60px" alt="" /></a><a href="https://github.com/nicholascloud"><img src="https://github.com/nicholascloud.png" width="60px" alt="" /></a><a href="https://github.com/topher200"><img src="https://github.com/topher200.png" width="60px" alt="" /></a><a href="https://github.com/PhotonQuantum"><img src="https://github.com/PhotonQuantum.png" width="60px" alt="" /></a><a href="https://github.com/GitSquared"><img src="https://github.com/GitSquared.png" width="60px" alt="" /></a><a href="https://github.com/ava1ar"><img src="https://github.com/ava1ar.png" width="60px" alt="" /></a><a href="https://github.com/alqh"><img src="https://github.com/alqh.png" width="60px" alt="" /></a><a href="https://github.com/pedropombeiro"><img src="https://github.com/pedropombeiro.png" width="60px" alt="" /></a><a href="https://github.com/minidfx"><img src="https://github.com/minidfx.png" width="60px" alt="" /></a><a href="https://github.com/JoeKlemmer"><img src="https://github.com/JoeKlemmer.png" width="60px" alt="" /></a><a href="https://github.com/MikaelElkiaer"><img src="https://github.com/MikaelElkiaer.png" width="60px" alt="" /></a><a href="https://github.com/smoogipoo"><img src="https://github.com/smoogipoo.png" width="60px" alt="" /></a><a href="https://github.com/ColonelBucket8"><img src="https://github.com/ColonelBucket8.png" width="60px" alt="" /></a><a href="https://github.com/mutewinter"><img src="https://github.com/mutewinter.png" width="60px" alt="" /></a><a href="https://github.com/tobi"><img src="https://github.com/tobi.png" width="60px" alt="" /></a><a href="https://github.com/benmacleod"><img src="https://github.com/benmacleod.png" width="60px" alt="" /></a><a href="https://github.com/benbfortis"><img src="https://github.com/benbfortis.png" width="60px" alt="" /></a><a href="https://github.com/jakewarren"><img src="https://github.com/jakewarren.png" width="60px" alt="" /></a><a href="https://github.com/huettern"><img src="https://github.com/huettern.png" width="60px" alt="" /></a><a href="https://github.com/tgpholly"><img src="https://github.com/tgpholly.png" width="60px" alt="" /></a><a href="https://github.com/Fuzznimp"><img src="https://github.com/Fuzznimp.png" width="60px" alt="" /></a><a href="https://github.com/crab-apple"><img src="https://github.com/crab-apple.png" width="60px" alt="" /></a><a href="https://github.com/Tommylans"><img src="https://github.com/Tommylans.png" width="60px" alt="" /></a><a href="https://github.com/jacktrusler"><img src="https://github.com/jacktrusler.png" width="60px" alt="" /></a><a href="https://github.com/socketbox"><img src="https://github.com/socketbox.png" width="60px" alt="" /></a><a href="https://github.com/lubosm"><img src="https://github.com/lubosm.png" width="60px" alt="" /></a><a href="https://github.com/xdice86"><img src="https://github.com/xdice86.png" width="60px" alt="" /></a><a href="https://github.com/pablosproject"><img src="https://github.com/pablosproject.png" width="60px" alt="" /></a><!-- sponsors -->
+</p>
 
-- [Features](#features)
+## Elevator Pitch
+
+Rant time: You've heard it before, git is _powerful_, but what good is that power when everything is so damn hard to do? Interactive rebasing requires you to edit a goddamn TODO file in your editor? _Are you kidding me?_ To stage part of a file you need to use a command line program to step through each hunk and if a hunk can't be split down any further but contains code you don't want to stage, you have to edit an arcane patch file _by hand_? _Are you KIDDING me?!_ Sometimes you get asked to stash your changes when switching branches only to realise that after you switch and unstash that there weren't even any conflicts and it would have been fine to just checkout the branch directly? _YOU HAVE GOT TO BE KIDDING ME!_
+
+If you're a mere mortal like me and you're tired of hearing how powerful git is when in your daily life it's a powerful pain in your ass, lazygit might be for you.
+
+## Table of contents
+
 - [Installation](#installation)
-  - [Prebuilt binaries](#pre-built-binaries)
-  - [Package Managers](#package-managers)
-  - [Building from source](#building-from-source)
-  - [Fully static binary](#fully-static-binary)
-  - [macOS terminal](#macos-terminal)
-  - [Linux clipboard support](#linux-clipboard-support)
-  - [Colors and syntax highlighting](#colors-and-syntax-highlighting)
-  - [Cygwin, Mingw, Plan9](#cygwin-mingw-plan9)
+  - [Binary releases](#binary-releases)
+  - [Homebrew](#homebrew)
+  - [MacPorts](#macports)
+  - [Void Linux](#void-linux)
+  - [Scoop (Windows)](#scoop-windows)
+  - [Arch Linux](#arch-linux)
+  - [Fedora and RHEL](#fedora-and-rhel)
+  - [Solus Linux](#solus-linux)
+  - [Ubuntu](#ubuntu)
+  - [Funtoo Linux](#funtoo-linux)
+  - [FreeBSD](#freebsd)
+  - [Conda](#conda)
+  - [Go](#go)
+  - [Chocolatey (Windows)](#chocolatey-windows)
+  - [Manual](#manual)
 - [Usage](#usage)
-- [Documentation and Help](#documentation-and-help)
+  - [Keybindings](#keybindings)
+  - [Changing directory on exit](#changing-directory-on-exit)
+  - [Undo/Redo](#undoredo)
+- [Configuration](#configuration)
+  - [Custom pagers](#configuration)
+  - [Custom commands](#configuration)
+- [Tutorials](#tutorials)
+- [Cool Features](#cool-features)
 - [Contributing](#contributing)
+- [Donate](#donate)
+- [Alternatives](#alternatives)
 
-- - -
+Github Sponsors is matching all donations dollar-for-dollar for 12 months so if you're feeling generous consider [sponsoring me](https://github.com/sponsors/jesseduffield)
 
-## Features
-
-- Easy to use and install.
-- No dependencies or external files are needed — just the binary you can download further down the page.
-- Multiple cursors.
-- Common keybindings (<kbd>Ctrl-s</kbd>, <kbd>Ctrl-c</kbd>, <kbd>Ctrl-v</kbd>, <kbd>Ctrl-z</kbd>, …).
-  - Keybindings can be rebound to your liking.
-- Sane defaults.
-  - You shouldn't have to configure much out of the box (and it is extremely easy to configure).
-- Splits and tabs.
-- nano-like menu to help you remember the keybindings.
-- Extremely good mouse support.
-  - This means mouse dragging to create a selection, double click to select by word, and triple click to select by line.
-- Cross-platform (it should work on all the platforms Go runs on).
-  - Note that while Windows is supported Mingw/Cygwin is not (see below).
-- Plugin system (plugins are written in Lua).
-  - micro has a built-in plugin manager to automatically install, remove, and update plugins.
-- Built-in diff gutter.
-- Simple autocompletion.
-- Persistent undo.
-- Automatic linting and error notifications.
-- Syntax highlighting for over [130 languages](runtime/syntax).
-- Color scheme support.
-  - By default, micro comes with 16, 256, and true color themes.
-- True color support (set the `MICRO_TRUECOLOR` environment variable to 1 to enable it).
-- Copy and paste with the system clipboard.
-- Small and simple.
-- Easily configurable.
-- Macros.
-- Common editor features such as undo/redo, line numbers, Unicode support, soft wrapping, …
+[<img src="https://i.imgur.com/sVEktDn.png">](https://youtu.be/CPLdltN7wgE)
 
 ## Installation
 
-To install micro, you can download a [prebuilt binary](https://github.com/zyedidia/micro/releases), or you can build it from source.
+### Binary Releases
 
-If you want more information about ways to install micro, see this [wiki page](https://github.com/zyedidia/micro/wiki/Installing-Micro).
+For Windows, Mac OS(10.12+) or Linux, you can download a binary release [here](../../releases).
 
-Use `micro -version` to get the version information after installing. It is only guaranteed that you are installing the most recent
-stable version if you install from the prebuilt binaries, Homebrew, or Snap.
+### Homebrew
 
-A desktop entry file and man page can be found in the [assets/packaging](https://github.com/zyedidia/micro/tree/master/assets/packaging) directory.
+Normally the lazygit formula can be found in the Homebrew core but we suggest you tap our formula to get the frequently updated one. It works with Linux, too.
 
-### Pre-built binaries
-
-Pre-built binaries are distributed with [releases](https://github.com/zyedidia/micro/releases).
-
-To uninstall micro, simply remove the binary, and the configuration directory at `~/.config/micro`.
-
-#### Quick-install script
-
-```bash
-curl https://getmic.ro | bash
-```
-
-The script will place the micro binary in the current directory. From there, you can move it to a directory on your path of your choosing (e.g. `sudo mv micro /usr/bin`). See its [GitHub repository](https://github.com/benweissmann/getmic.ro) for more information.
-
-#### Eget
-
-With [Eget](https://github.com/zyedidia/eget) installed, you can easily get a pre-built binary:
+Tap:
 
 ```
-eget zyedidia/micro
+brew install jesseduffield/lazygit/lazygit
 ```
 
-Use `--tag VERSION` to download a specific tagged version.
+Core:
 
 ```
-eget --tag nightly zyedidia/micro # download the nightly version (compiled every day at midnight UTC)
-eget --tag v2.0.8 zyedidia/micro  # download version 2.0.8 rather than the latest release
+brew install lazygit
 ```
 
-You can install `micro` by adding `--to /usr/local/bin` to the `eget` command, or move the binary manually to a directory on your `$PATH` after the download completes.
+### MacPorts
 
-See [Eget](https://github.com/zyedidia/eget) for more information.
-
-### Package managers
-
-You can install micro using Homebrew on Mac:
+Latest version built from github releases.
+Tap:
 
 ```
-brew install micro
+sudo port install lazygit
 ```
 
-**Note for Mac:** All micro keybindings use the control or alt (option) key, not the command
-key. By default, macOS terminals do not forward alt key events. To fix this, please see
-the section on [macOS terminals](https://github.com/zyedidia/micro#macos-terminal) further below.
+### Void Linux
 
-On Linux, you can install micro through [snap](https://snapcraft.io/docs/core/install)
+Packages for Void Linux are available in the distro repo
 
-```
-snap install micro --classic
-```
+They follow upstream latest releases
 
-Micro is also available through other package managers on Linux such dnf, AUR, Nix, and package managers
-for other operating systems. These packages are not guaranteed to be up-to-date.
-
-<!-- * `apt install micro` (Ubuntu 20.04 `focal`, and Debian `unstable | testing | buster-backports`). At the moment, this package (2.0.1-1) is outdated and has a known bug where debug mode is enabled. -->
-
-* Linux: Available in distro-specific package managers.
-    * `dnf install micro` (Fedora).
-    * `pacman -S micro` (Arch Linux).
-    * `emerge app-editors/micro` (Gentoo).
-    * `eopkg install micro` (Solus).
-    * `pacstall -I micro` (Pacstall).
-    * See [wiki](https://github.com/zyedidia/micro/wiki/Installing-Micro) for details about CRUX, Termux.
-* Windows: [Chocolatey](https://chocolatey.org) and [Scoop](https://github.com/lukesampson/scoop).
-    * `choco install micro`.
-    * `scoop install micro`.
-* OpenBSD: Available in the ports tree and also available as a binary package.
-    * `pkd_add -v micro`.
-* NetBSD, macOS, Linux, Illumos, etc. with [pkgsrc](http://www.pkgsrc.org/)-current:
-    * `pkg_add micro`
-* macOS with [MacPorts](https://www.macports.org):
-    * `sudo port install micro`
-
-**Note for Linux desktop environments:**
-
-For interfacing with the local system clipboard, the following tools need to be installed:
-* For X11 `xclip` or `xsel`
-* For [Wayland](https://wayland.freedesktop.org/) `wl-clipboard`
-
-Without these tools installed, micro will use an internal clipboard for copy and paste, but it won't be accessible to external applications.
-
-### Building from source
-
-If your operating system does not have a binary release, but does run Go, you can build from source.
-
-Make sure that you have Go version 1.16 or greater and Go modules are enabled.
-
-```
-git clone https://github.com/zyedidia/micro
-cd micro
-make build
-sudo mv micro /usr/local/bin # optional
+```sh
+sudo xbps-install -S lazygit
 ```
 
-The binary will be placed in the current directory and can be moved to
-anywhere you like (for example `/usr/local/bin`).
+### Scoop (Windows)
 
-The command `make install` will install the binary to `$GOPATH/bin` or `$GOBIN`.
+You can install `lazygit` using [scoop](https://scoop.sh/). It's in the `extras` bucket:
 
-You can install directly with `go get` (`go get github.com/zyedidia/micro/cmd/micro`) but this isn't
-recommended because it doesn't build micro with version information (necessary for the plugin manager),
-and doesn't disable debug mode.
+```sh
+# Add the extras bucket
+scoop bucket add extras
 
-### Fully static binary
-
-By default, the micro binary will dynamically link with core system libraries (this is generally
-recommended for security and portability). However, there is a fully static prebuilt binary that
-is provided for amd64 as `linux-static.tar.gz`, and to build a fully static binary from source, run
-
-```
-CGO_ENABLED=0 make build
+# Install lazygit
+scoop install lazygit
 ```
 
-### macOS terminal
+### Arch Linux
 
-If you are using macOS, you should consider using [iTerm2](http://iterm2.com/) instead of the default terminal (Terminal.app). The iTerm2 terminal has much better mouse support as well as better handling of key events. For best keybinding behavior, choose `xterm defaults` under `Preferences->Profiles->Keys->Presets...`, and select `Esc+` for `Left Option Key` in the same menu. The newest versions also support true color.
+Packages for Arch Linux are available via pacman and AUR (Arch User Repository).
 
-If you still insist on using the default Mac terminal, be sure to set `Use Option key as Meta key` under
-`Preferences->Profiles->Keyboard` to use <kbd>option</kbd> as <kbd>alt</kbd>.
+There are two packages. The stable one which is built with the latest release
+and the git version which builds from the most recent commit.
 
-### Colors and syntax highlighting
+- Stable: `sudo pacman -S lazygit`
+- Development: <https://aur.archlinux.org/packages/lazygit-git/>
 
-If you open micro and it doesn't seem like syntax highlighting is working, this is probably because
-you are using a terminal which does not support 256 color mode. Try changing the color scheme to `simple`
-by pressing <kbd>Ctrl-e</kbd> in micro and typing `set colorscheme simple`.
+Instruction of how to install AUR content can be found here:
+<https://wiki.archlinux.org/index.php/Arch_User_Repository>
 
-If you are using the default Ubuntu terminal, to enable 256 make sure your `TERM` variable is set
-to `xterm-256color`.
+### Fedora and RHEL
 
-Many of the Windows terminals don't support more than 16 colors, which means
-that micro's default color scheme won't look very good. You can either set
-the color scheme to `simple`, or download and configure a better terminal emulator
-than the Windows default.
+Packages for Fedora/RHEL and CentOS Stream are available via [Copr](https://copr.fedorainfracloud.org/coprs/atim/lazygit/) (Cool Other Package Repo).
 
-### Cygwin, Mingw, Plan9
-
-Cygwin, Mingw, and Plan9 are unfortunately not officially supported. In Cygwin and Mingw, micro will often work when run using
-the `winpty` utility:
-
-```
-winpty micro.exe ...
+```sh
+sudo dnf copr enable atim/lazygit -y
+sudo dnf install lazygit
 ```
 
-Micro uses the amazing [tcell library](https://github.com/gdamore/tcell), but this
-means that micro is restricted to the platforms tcell supports. As a result, micro does not support
-Plan9, and Cygwin (although this may change in the future). Micro also doesn't support NaCl (which is deprecated anyway).
+### Solus Linux
+
+```sh
+sudo eopkg install lazygit
+```
+
+### Ubuntu
+
+```sh
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
+```
+
+```sh
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+```
+
+```sh
+sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
+```
+
+Verify the correct installation of lazygit:
+
+```sh
+lazygit --version
+```
+
+### Funtoo Linux
+
+Funtoo Linux has an autogenerated lazygit package in [dev-kit](https://github.com/funtoo/dev-kit/tree/1.4-release/dev-vcs/lazygit):
+
+```sh
+sudo emerge dev-vcs/lazygit
+```
+
+### FreeBSD
+
+```sh
+pkg install lazygit
+```
+
+### Conda
+
+Released versions are available for different platforms, see <https://anaconda.org/conda-forge/lazygit>
+
+```sh
+conda install -c conda-forge lazygit
+```
+
+### Go
+
+```sh
+go install github.com/jesseduffield/lazygit@latest
+```
+
+Please note:
+If you get an error claiming that lazygit cannot be found or is not defined, you
+may need to add `~/go/bin` to your $PATH (MacOS/Linux), or `%HOME%\go\bin`
+(Windows). Not to be mistaken for `C:\Go\bin` (which is for Go's own binaries,
+not apps like lazygit).
+
+### Chocolatey (Windows)
+
+You can install `lazygit` using [Chocolatey](https://chocolatey.org/):
+
+```sh
+choco install lazygit
+```
+
+### Manual
+
+You'll need to [install Go](https://golang.org/doc/install)
+
+```
+git clone https://github.com/jesseduffield/lazygit.git
+cd lazygit
+go install
+```
+
+You can also use `go run main.go` to compile and run in one go (pun definitely intended)
 
 ## Usage
 
-Once you have built the editor, start it by running `micro path/to/file.txt` or `micro` to open an empty buffer.
-
-micro also supports creating buffers from `stdin`:
+Call `lazygit` in your terminal inside a git repository.
 
 ```sh
-ip a | micro
+$ lazygit
 ```
 
-You can move the cursor around with the arrow keys and mouse.
+If you want, you can
+also add an alias for this with `echo "alias lg='lazygit'" >> ~/.zshrc` (or
+whichever rc file you're using).
 
-You can also use the mouse to manipulate the text. Simply clicking and dragging
-will select text. You can also double click to enable word selection, and triple
-click to enable line selection.
+### Keybindings
 
-## Documentation and Help
+You can check out the list of keybindings [here](/docs/keybindings).
 
-micro has a built-in help system which you can access by pressing <kbd>Ctrl-e</kbd> and typing `help`. Additionally, you can
-view the help files here:
+### Changing Directory On Exit
 
-- [main help](https://github.com/zyedidia/micro/tree/master/runtime/help/help.md)
-- [keybindings](https://github.com/zyedidia/micro/tree/master/runtime/help/keybindings.md)
-- [commands](https://github.com/zyedidia/micro/tree/master/runtime/help/commands.md)
-- [colors](https://github.com/zyedidia/micro/tree/master/runtime/help/colors.md)
-- [options](https://github.com/zyedidia/micro/tree/master/runtime/help/options.md)
-- [plugins](https://github.com/zyedidia/micro/tree/master/runtime/help/plugins.md)
+If you change repos in lazygit and want your shell to change directory into that repo on exiting lazygit, add this to your `~/.zshrc` (or other rc file):
 
-I also recommend reading the [tutorial](https://github.com/zyedidia/micro/tree/master/runtime/help/tutorial.md) for
-a brief introduction to the more powerful configuration features micro offers.
+```
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
 
-There is also an unofficial Discord, which you can join at https://discord.gg/nhWR6armnR.
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
+}
+```
+
+Then `source ~/.zshrc` and from now on when you call `lg` and exit you'll switch directories to whatever you were in inside lazygit. To override this behaviour you can exit using `shift+Q` rather than just `q`.
+
+### Undo/Redo
+
+See the [docs](/docs/Undoing.md)
+
+## Configuration
+
+Check out the [configuration docs](docs/Config.md).
+
+### Custom Pagers
+
+See the [docs](docs/Custom_Pagers.md)
+
+### Custom Commands
+
+If lazygit is missing a feature, there's a good chance you can implement it yourself with a custom command!
+
+See the [docs](docs/Custom_Command_Keybindings.md)
+
+## Tutorials
+
+- [Video Tutorial](https://youtu.be/VDXvbHZYeKY)
+- [Rebase Magic Video Tutorial](https://youtu.be/4XaToVut_hs)
+- [Twitch Stream](https://www.twitch.tv/jesseduffield)
+
+## Cool features
+
+- Adding files easily
+- Resolving merge conflicts
+- Easily check out recent branches
+- Scroll through logs/diffs of branches/commits/stash
+- Quick pushing/pulling
+- Squash down and reword commits
+
+### Resolving merge conflicts
+
+![Gif](../assets/resolving-merge-conflicts.gif)
+
+### Interactive Rebasing
+
+![Interactive Rebasing](../assets/rebase.gif)
 
 ## Contributing
 
-If you find any bugs, please report them! I am also happy to accept pull requests from anyone.
+We love your input! Please check out the [contributing guide](CONTRIBUTING.md).
+For contributor discussion about things not better discussed here in the repo, join the discord channel
 
-You can use the [GitHub issue tracker](https://github.com/zyedidia/micro/issues)
-to report bugs, ask questions, or suggest new features.
+<a href="https://discord.gg/ehwFt2t4wt"><img src='../assets/discord.png' width='75'></a>
 
-For a more informal setting to discuss the editor, you can join the [Gitter chat](https://gitter.im/zyedidia/micro) or the [Discord](https://discord.gg/nhWR6armnR). You can also use the [Discussions](https://github.com/zyedidia/micro/discussions) section on Github for a forum-like setting or for Q&A.
+Check out this [video](https://www.youtube.com/watch?v=kNavnhzZHtk) walking through the creation of a small feature in lazygit if you want an idea of where to get started.
 
-Sometimes I am unresponsive, and I apologize! If that happens, please ping me.
+### Debugging Locally
+
+Run `lazygit --debug` in one terminal tab and `lazygit --logs` in another to view the program and its log output side by side
+
+## Donate
+
+If you would like to support the development of lazygit, consider [sponsoring me](https://github.com/sponsors/jesseduffield) (github is matching all donations dollar-for-dollar for 12 months)
+
+## FAQ
+
+### What do the commit colors represent?
+
+- Green: the commit is included in the master branch
+- Yellow: the commit is not included in the master branch
+- Red: the commit has not been pushed to the upstream branch
+
+## Shameless Plug
+
+If you want to see what I (Jesse) am up to in terms of development, follow me on
+[twitter](https://twitter.com/DuffieldJesse) or check out my [blog](https://jesseduffield.com/)
+
+## Alternatives
+
+If you find that lazygit doesn't quite satisfy your requirements, these may be a better fit:
+
+- [GitUI](https://github.com/Extrawurst/gitui)
+- [tig](https://github.com/jonas/tig)
